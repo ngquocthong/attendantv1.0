@@ -1,3 +1,4 @@
+//23.05
 /* -----------------------------------------------------------------------------
   - Project: RFID attendance system using ESP32
   - Author:  https://www.youtube.com/ElectronicsTechHaIs
@@ -40,7 +41,7 @@ String getData, Link;
 String OldCardID = "";
 unsigned long previousMillis1 = 0;
 unsigned long previousMillis2 = 0;
-String URL = "http://10.26.9.5:4343//RFIDAttendance/getdata.php"; //computer IP or the server domain
+String URL = "http://10.26.8.222:4343//RFIDAttendance/getdata.php"; //computer IP or the server domain
 //*************************Biometric Icons*********************************
 #define Wifi_start_width 54
 #define Wifi_start_height 49
@@ -231,7 +232,7 @@ void loop() {
   //---------------------------------------------
   //  Serial.println(CardID);
   SendCardID(CardID);
-  delay(500);
+  delay(100);
   display.clearDisplay();
 }
 //************send the Card UID to the website*************
@@ -349,9 +350,9 @@ void connectToWiFi() {
 void coi(int n) {
   for (int i = 0; i < n; i++) {
     digitalWrite(2, HIGH);
-    delay(200);
+    delay(100);
     digitalWrite(2, LOW);
-    delay(200);
+    delay(100);
   }
 }
 //=======================================================================
